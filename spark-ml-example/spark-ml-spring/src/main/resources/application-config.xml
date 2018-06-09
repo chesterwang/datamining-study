@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util-3.0.xsd
+		"
+	default-lazy-init="false">
+
+	<context:annotation-config />
+
+
+	<bean id="propertyConfigurer"
+		  class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<!--<value>classpath:url.properties</value>-->
+				<value>classpath:spark.properties</value>
+				<!--<value>classpath:hive.properties</value>-->
+			</list>
+		</property>
+	</bean>
+
+	<bean id="hadoopConf"
+	      class="org.apache.hadoop.conf.Configuration">
+		<!--<constructor-arg>-->
+			<!--<bean class="org.apache.hadoop.conf.Configuration"/>-->
+		<!--</constructor-arg>-->
+		<!--<constructor-arg>-->
+			<!--<map>-->
+				<!--<entry key="fs.defaultFS" value="${hdfs.url}"></entry>-->
+				<!--<entry key="hbase.zookeeper.quorum" value="${zookeeper.url}"></entry>-->
+				<!--<entry key="yarn.resourcemanager.hostname" value="${yarn.resourcemanager.hostname}"></entry>-->
+				<!--<entry key="yarn.resourcemanager.address" value="${yarn.resourcemanager.hostname}:8050"></entry>-->
+				<!--<entry key="mapreduce.framework.name" value="yarn"></entry>-->
+			<!--</map>-->
+		<!--</constructor-arg>-->
+	</bean>
+
+    <!--<util:properties id="redis" location="classpath:redis.properties" />-->
+
+</beans>

@@ -1,0 +1,8 @@
+
+#
+http://v.youku.com/v_show/id_XMTQ5NTAzODc4NA==.html?spm=5176.bbsr273638.0.0.8grG5H&from=y1.7-1.2
+
+### Nshifts
+- 通过Nshifts获得更多的样本以增加最大似然估计的准确性
+- 120shifts 获得遗忘曲线(条件概率函数)
+
